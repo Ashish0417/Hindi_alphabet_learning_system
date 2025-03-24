@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Alphabet Learning</title>
+    <link rel="stylesheet" href="/css/learn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Kaksha</div>
+        <nav>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i><br>Home</a></li>
+            <li><a href="course.html"><i class="fas fa-bars"></i><br>Menu</a></li>
+            <li><a href="#"><i class="fas fa-phone"></i><br>Contact Us</a></li>
+          </ul>
+        </nav>        
+    </header>
+
+  <h1>अक्षर सीखिए</h1>
+
+  <div class="card">
+    <img id="image" src="anar.png" alt="अनार">
+    <span id="letter">अ</span>
+    <span id="word">अनार</span>
+  </div>
+
+  <div class="controls">
+    <button class="nav-btn" onclick="prev()">⟵</button>
+    <button class="play-btn" onclick="playAudio()">▶</button>
+    <button class="nav-btn" onclick="next()">⟶</button>
+  </div>
+  
+
+  <audio id="audio" src="audio/anar.mp3"></audio>
+
+  <script src="/js/learn.js"></script>
+</body>
+</html>

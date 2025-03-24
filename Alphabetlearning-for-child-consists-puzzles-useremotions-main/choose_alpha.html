@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>हिन्दी अक्षर सीखें</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Marker Felt', cursive;
+      text-align: center;
+      background-color: #fcffea;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content-wrapper {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      color: #4b0082;
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      animation: rainbow 5s infinite;
+    }
+
+    @keyframes rainbow {
+      0% { color: #ff0000; }
+      25% { color: #ffa500; }
+      50% { color: #008000; }
+      75% { color: #0000ff; }
+      100% { color: #4b0082; }
+    }
+
+    .letters-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px auto;
+      max-width: 700px;
+    }
+
+    .letter {
+      width: 60px;
+      height: 60px;
+      background-color: #ffcefa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #4b0082;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      border: 3px solid #ffc0cb;
+    }
+
+    .letter:hover {
+      background-color: #ffc0cb;
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+    }
+
+    .letter:active {
+      transform: scale(0.95);
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      width: 100px;
+      height: 50px;
+      background-color: #ff6b6b;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      font-family: 'Comic Sans MS', 'Marker Felt', cursive;
+    }
+
+    .back-btn:hover {
+      background-color: #ff4757;
+      transform: scale(1.05);
+    }
+
+    .back-btn:active {
+      transform: scale(0.95);
+    }
+
+    .instruction {
+      font-size: 20px;
+      color: #666;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <h1>हिन्दी अक्षर सीखें</h1>
+    <div class="instruction">अपना पसंदीदा अक्षर चुनें!</div>
+    <div class="letters-container" id="lettersContainer"></div>
+    <button class="back-btn" onclick="window.location.href = 'course.html';">घर जाएँ</button>
+  </div>
+
+  <script>
+    const letters = "अआइईउऊऋएऐओऔकखगघचछजझटठडढणतथदधनपफबभमयरलवशषसह";
+    const container = document.getElementById("lettersContainer");
+    const colors = [
+      "#FFB6C1", "#FFD700", "#98FB98", "#87CEFA", "#DDA0DD",
+      "#FFA07A", "#AFEEEE", "#D8BFD8", "#F0E68C", "#E6E6FA"
+    ];
+
+    letters.split("").forEach((letter, index) => {
+      const div = document.createElement("div");
+      div.classList.add("letter");
+      div.textContent = letter;
+      div.style.backgroundColor = colors[index % colors.length];
+      div.style.borderColor = colors[(index + 3) % colors.length];
+      
+      // Play sound when clicking on a letter
+      div.onclick = () => {
+        playSound(letter);
+        setTimeout(() => {
+          window.location.href = `hindi_puzzle_/${encodeURIComponent(letter)}.html`;
+        }, 500);
+      }
+      
+      // Add fun hover animation
+      div.onmouseover = () => {
+        div.style.transform = "scale(1.1) rotate(" + (Math.random() * 10 - 5) + "deg)";
+      };
+      
+      div.onmouseout = () => {
+        div.style.transform = "scale(1)";
+      };
+      
+      container.appendChild(div);
+    });
+    
+    // Simple sound effect function (using tone synthesis)
+    function playSound(letter) {
+      try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        // Different letters get different tones
+        const letterCode = letter.charCodeAt(0);
+        const frequency = 220 + (letterCode % 24) * 25;
+        
+        oscillator.type = 'sine';
+        oscillator.frequency.value = frequency;
+        gainNode.gain.value = 0.1;
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.start();
+        
+        // Envelope
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.05);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.4);
+        
+        setTimeout(() => {
+          oscillator.stop();
+          oscillator.disconnect();
+          gainNode.disconnect();
+        }, 400);
+      } catch (e) {
+        console.log("Audio play failed:", e);
+      }
+    }
+  </script>
+</body>
+</html>

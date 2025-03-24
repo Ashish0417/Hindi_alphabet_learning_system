@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>हिन्दी अक्षर पहेली - व</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fcffea;
+    }
+
+    .huge-letter {
+      font-size: 80px;
+      color: blue;
+      margin: 20px;
+    }
+
+    .box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .letter {
+      width: 40px;
+      height: 40px;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      border: 1px solid black;
+    }
+
+    .dropzone {
+      width: 100px;
+      height: 100px;
+      border: 5px solid blue;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .back-btn {
+      padding: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<h1>अक्षर पहेली</h1>
+<div class="huge-letter">व</div>
+<div class="box" id="box"></div>
+<div class="dropzone" id="dropzone">यहाँ डालें</div>
+<button class="back-btn" onclick="window.location.href='index.html'">वापस</button>
+
+<script>
+  const letters = "अआइईउऊऋएऐओऔकखगघचछजझटठडढतथदधनपफबभमयरलवशसह";
+  const selectedLetter = "व";
+
+  const box = document.getElementById("box");
+  const dropzone = document.getElementById("dropzone");
+
+  let randomLetters = generateRandomLetters(14);
+  randomLetters.push(selectedLetter);
+  shuffleArray(randomLetters);
+
+  randomLetters.forEach((letter) => {
+    const div = document.createElement("div");
+    div.textContent = letter;
+    div.classList.add("letter");
+    div.draggable = true;
+    div.addEventListener("dragstart", dragStart);
+    box.appendChild(div);
+  });
+
+  dropzone.addEventListener("dragover", (e) => e.preventDefault());
+  dropzone.addEventListener("drop", drop);
+
+  function dragStart(e) {
+    e.dataTransfer.setData("text", e.target.textContent);
+  }
+
+  function drop(e) {
+    const draggedLetter = e.dataTransfer.getData("text");
+    if (draggedLetter === selectedLetter) {
+      dropzone.textContent = draggedLetter;
+      alert("सही उत्तर!");
+    } else {
+      alert("गलत उत्तर! फिर से कोशिश करें।");
+    }
+  }
+
+  function generateRandomLetters(count) {
+    const result = [];
+    for (let i = 0; i < count; i++) {
+      result.push(letters[Math.floor(Math.random() * letters.length)]);
+    }
+    return result;
+  }
+
+  function shuffleArray(arr) {
+    arr.sort(() => Math.random() - 0.5);
+  }
+</script>
+</body>
+</html>
