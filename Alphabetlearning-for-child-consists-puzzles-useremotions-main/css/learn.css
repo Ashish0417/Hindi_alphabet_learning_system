@@ -69,15 +69,14 @@ body {
         width: 35%;
         height: 75%;
         margin: 20px auto;
-        padding: 5%;
+        padding: 3%;
         text-align: center;
     }
     
     .card img {
-        width: 70%;
-        height: 70%;
+        width: 60%;
+        height: 60%;
         object-fit: contain;
-        margin-bottom: 15px;
     }
     
     #letter {

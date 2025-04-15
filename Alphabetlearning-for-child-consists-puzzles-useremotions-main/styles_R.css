@@ -1,17 +1,15 @@
-/* CSS Styles */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('Alphabet_bg.jpg');
-    background-color: #f0f0f0; /* Light gray background color */
+    /* background-image: url('https://cdn.pixabay.com/photo/2016/04/15/20/28/cartoon-1332224_1280.png'); */
+    /* background-color: #f0f0f0; */
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: #e7edf6;
+    color: black;
+    padding: 15px;
     text-align: center;
     width: 100%;
 }
@@ -22,18 +20,19 @@ header h1 {
 
 section {
     text-align: center;
-    margin-top: 20px; /* Add some top margin */
+    margin-top: 10px;
 }
 
 h2 {
     color: #333;
     text-align: center;
-    margin-bottom: 20px; /* Add some bottom margin */
 }
 
 .writing-practice {
-    background-color: #ffd700; /* Gold background color */
-    padding: 50px;
+    background-color: #fce774; /* Gold background color */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: inline-block;
@@ -42,10 +41,9 @@ h2 {
 
 canvas {
     border: 1px solid #000;
-    margin-bottom: 10px;
     display: block;
     margin: 0 auto;
-    background-color: #fff; /* White canvas background color */
+    background-color: #fff;
 }
 
 button {
@@ -54,15 +52,14 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 10px;
     transition: background-color 0.3s;
     background-color: #f61a0a;
-    font-size: 14px;
+    font-size: 30px;
 }
 
 button:hover{
     background-color: lightcoral;
-    font-size: 15px;
+    font-size: 33px;
 }
 #prevBtn {
     background-color: blue; /* Orange background for previous button */
@@ -74,59 +71,55 @@ button:hover{
 
 #prevBtn:hover{
     background-color: slateblue;
-    font-size: 15px;
+    font-size: 33px;
 }
 #nextBtn:hover{
     background-color: slateblue;
-    font-size: 16px;
+    font-size: 33px;
 }
 .image-container {
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .image-container img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border: 1px solid #000;
-    margin: 0 10px;
-    border-radius: 50%; /* Circular border for images */
+    margin-top: 5px;
+    border-radius: 50%;
 }
 
 .nav-buttons {
     margin-top: 20px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
     background-color: greenyellow;
 }
 
-/* Define CSS classes for different completion states */
 .perfect {
-    color: green; /* Change color to green for perfect completion */
+    color: green;
 }
 
 .partial {
-    color: blue; /* Change color to blue for partial completion */
+    color: blue;
 }
 
 .try-again {
-    color: red; /* Change color to red for incomplete */
+    color: red;
 }
 
 #submitBtn{
     background-color: green;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 30px;
 }
 
 #submitBtn:hover{
     background-color: lawngreen;
-    font-size: 17px;
+    font-size: 33px;
 }
 
 #completionMessage{
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
     font-size: 20px;
     padding: 8px;
 }
@@ -137,4 +130,56 @@ button:hover{
     font-weight: bold;
     margin-top: 5px;
     font-size: 22px;
+}
+
+#colorPicker {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+#colorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+
+.floating-letters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction */
+    z-index: -1; /* Place behind other content */
+    overflow: hidden;
+}
+
+.floating-letter {
+    position: absolute;
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.2); /* Light transparent color */
+    font-weight: bold;
+    animation: floatAnimation linear infinite;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+.letterTitle{
+    font-size: 1px;
 }

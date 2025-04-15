@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Letters!</title>
+    <link rel="stylesheet" href="styles_R.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Floating letters background elements -->
+    <div class="floating-letters">
+        <!-- Letters will be added via JavaScript -->
+    </div>
+
+    <header>
+        <h1><a href="course.html"><i class="fas fa-home"></i></a> Fun Letters!</h1> 
+    </header>
+    
+    <section>
+        <audio id="clapSound" src="claps.mp3"></audio>
+        <audio id="lose" src="lose.mp3"></audio>
+       
+        <div class="writing-practice">
+            <h2 id="letterTitle" style="font-size: 5px;"></h2>
+            <canvas id="drawingCanvas" width="400" height="275"></canvas>
+            
+            <div class="image-container">
+                <img src="" alt="Letter Picture" id="image">
+                <p class="image-caption" id="imageCaption"></p>
+            </div>
+            
+            <div>
+                <button id="prevBtn" onclick="previousLetter()"><i class="fas fa-chevron-left"></i></button>
+                <button id="submitBtn" onclick="checkCompletion()"><i class="fas fa-check"></i></button>
+                <button id="nextBtn" onclick="nextLetter()"><i class="fas fa-chevron-right"></i></button>
+                
+                <div id="completionBox">
+                    <p id="completionMessage"></p>
+                </div>
+                
+                <button onclick="resetCanvas()"><i class="fas fa-sync-alt"></i></button>
+                <input type="color" id="colorPicker" value="#000000" title="Pick Color">
+                <input type="number" id="strokeWidth" value="8" min="1" max="20" title="Line Size">
+            </div>
+        </div>
+    </section>
+
+    <script src="script_R2.js"></script>
+    <script>
+        // Add floating letters to background
+        function addFloatingLetters() {
+            const letters = ['अ', 'आ', 'इ', 'ई', 'उ', 'ऊ', 'ए', 'ऐ', 'ओ', 'औ'];
+            const container = document.querySelector('.floating-letters');
+            
+            for (let i = 0; i < 20; i++) {
+                const letter = document.createElement('div');
+                letter.className = 'floating-letter';
+                letter.textContent = letters[Math.floor(Math.random() * letters.length)];
+                
+                // Random position and animation delay
+                letter.style.left = `${Math.random() * 100}%`;
+                letter.style.animationDelay = `${Math.random() * 15}s`;
+                letter.style.animationDuration = `${15 + Math.random() * 10}s`;
+                
+                container.appendChild(letter);
+            }
+        }
+        
+        // Update the letter title to be more visual
+        function updateLetterTitle() {
+            const letterTitle = document.getElementById('letterTitle');
+            const currentLetter = letters[currentLetterIndex];
+            letterTitle.innerHTML = `<span style="font-size: 60px;">${currentLetter}</span>`;
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            addFloatingLetters();
+            
+            // Override the drawLetter function to use our more visual title
+            const originalDrawLetter = drawLetter;
+            drawLetter = function() {
+                originalDrawLetter();
+                updateLetterTitle();
+            };
+            
+            // Call it once to set initial state
+            drawLetter();
+        });
+    </script>
+</body>
+</html>

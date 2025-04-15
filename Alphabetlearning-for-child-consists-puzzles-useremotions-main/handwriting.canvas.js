@@ -42,10 +42,19 @@
         this.recognize = handwriting.recognize;
     };
     /**
-   
+    * [toggle_Undo_Redo description]
      * @return {[type]} [description]*/
      
-   
+    handwriting.Canvas.prototype.set_Undo_Redo = function (undo, redo) {
+        this.allowUndo = undo;
+        this.allowRedo = undo ? redo : false;
+        if (!this.allowUndo) {
+          this.step = [];
+          this.redo_step = [];
+          this.redo_trace = [];
+        }
+      };
+    
 
     handwriting.Canvas.prototype.setLineWidth = function(lineWidth) {
         this.lineWidth = lineWidth;
@@ -140,6 +149,34 @@
         this.trace.push(w);
         if (this.allowUndo) this.step.push(this.canvas.toDataURL());
     };
+
+  handwriting.Canvas.prototype.undo = function () {
+    if (!this.allowUndo || this.step.length <= 0) return;
+    else if (this.step.length === 1) {
+      if (this.allowRedo) {
+        this.redo_step.push(this.step.pop());
+        this.redo_trace.push(this.trace.pop());
+        this.cxt.clearRect(0, 0, this.width, this.height);
+      }
+    } else {
+      if (this.allowRedo) {
+        this.redo_step.push(this.step.pop());
+        this.redo_trace.push(this.trace.pop());
+      } else {
+        this.step.pop();
+        this.trace.pop();
+      }
+      loadFromUrl(this.step.slice(-1)[0], this);
+    }
+  };
+
+  handwriting.Canvas.prototype.redo = function () {
+    if (!this.allowRedo || this.redo_step.length <= 0) return;
+    this.step.push(this.redo_step.pop());
+    this.trace.push(this.redo_trace.pop());
+    loadFromUrl(this.step.slice(-1)[0], this);
+  };
+
     
 
     handwriting.Canvas.prototype.erase = function() {

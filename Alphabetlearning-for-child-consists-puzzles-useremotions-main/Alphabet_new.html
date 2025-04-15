@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>हिन्दी अक्षर सीखें</title>
-    <link rel="stylesheet" type="text/css" href="style1_new.css">
+    <link rel="stylesheet" type="text/css" href="style2_new.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
@@ -13,10 +13,14 @@
 </head>
 
 <body>
-    <header >
-        <div id="heading">अक्षर सीखें</div>
-        <li><a href="course.html"><i class="fas fa-home" style="padding-top:40px "></i><br>Dashboard</a></li>
+    <header>
+        <div id="heading">अक्षर सीखें</div> 
+      
     </header>
+  <ul>
+    <li><a href="course.html"><i class="fas fa-home"></i><br>Dashboard</br></a>
+    </ul>
+   
     <audio id="clapSound" src="claps.mp3"></audio>
     <audio id="lose" src="lose.mp3"></audio>
    
@@ -35,7 +39,7 @@
             
             <div class="sub-container1">
                 <h2> "अ" लिखें </h2>
-                <canvas id="canvas" width="650" height="400"></canvas>
+                <canvas id="canvas" width="650" height="380"></canvas>
             </div>
         </div>
         
@@ -47,22 +51,25 @@
 
             <button class="speak-button" onclick="speakLetter('अ')">🔊</button>
             <button onclick="canvas.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas.redo()"><i class="fas fa-redo"></i></button>
+            
             
            
             
         </div>
        <div id="res_box">
         <div width="400" style="padding-top: 20px;">
-            <h1>परिणाम:</h1><span id='result'></span>
-            
+            <h1>परिणाम:</h1>
+           
+            <span id='result'></span>
+           
         </div>
         
         <div  class= "ans" id="ans" ></div>
-     
+       
 
         <input type="hidden" id="letterToCompare" value="अ">
        
@@ -86,13 +93,13 @@
             
             <button class="action-button" onclick="recognizeAndCompare1()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('आ')">🔊</button>
-           <!---- <button onclick="canvas1.erase()">Erase</button>-->
+           <!---- <button onclick="canva1s1.erase()">Erase</button>-->
            <button onclick="canvas1.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
-            
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas1.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas1.redo()"><i class="fas fa-redo"></i></button>
+        
         </div>
        <div id="res_box">
         <div width="400">
@@ -124,11 +131,11 @@
             <button class="action-button" onclick="recognizeAndCompare2()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('इ')">🔊</button>
             <button onclick="canvas2.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
-         
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas2.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas2.redo()"><i class="fas fa-redo"></i></button>
+            
            
             
         </div>
@@ -163,10 +170,11 @@
             <button class="action-button" onclick="recognizeAndCompare3()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('ई')">🔊</button>
             <button onclick="canvas3.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas3.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas3.redo()"><i class="fas fa-redo"></i></button>
+            
          
            
             
@@ -203,11 +211,11 @@
             <button class="action-button" onclick="recognizeAndCompare4()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('उ')">🔊</button>
             <button onclick="canvas4.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
-         
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas4.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas4.redo()"><i class="fas fa-redo"></i></button>
+            
            
             
         </div>
@@ -241,10 +249,11 @@
             <button class="action-button" onclick="recognizeAndCompare5()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('ऊ')">🔊</button>
             <button onclick="canvas5.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas5.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas5.redo()"><i class="fas fa-redo"></i></button>
+            
          
            
             
@@ -279,10 +288,10 @@
             <button class="action-button" onclick="recognizeAndCompare6()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('ऋ')">🔊</button>
             <button onclick="canvas6.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas6.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas6.redo()"><i class="fas fa-redo"></i></button>
          
            
             
@@ -302,7 +311,7 @@
     <div class="writing-practice">
         <div class="main-container">
             <div class="sub-container">
-                <video width="360" height="400" controls muted>
+                <video width="360" height="450" controls muted>
                     <source src="trace_ae.mp4" type="video/mp4">
                 </video>
             </div>
@@ -317,10 +326,10 @@
             <button class="action-button" onclick="recognizeAndCompare7()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('ए')">🔊</button>
             <button onclick="canvas7.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas7.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas7.redo()"><i class="fas fa-redo"></i></button>
          
            
             
@@ -355,10 +364,10 @@
             <button class="action-button" onclick="recognizeAndCompare8()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('ऐ')">🔊</button>
             <button onclick="canvas8.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas8.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas8.redo()"><i class="fas fa-redo"></i></button>
          
            
             
@@ -393,10 +402,10 @@
             <button class="action-button" onclick="recognizeAndCompare9()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('ओ')">🔊</button>
             <button onclick="canvas9.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas9.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas9.redo()"><i class="fas fa-redo"></i></button>
          
            
             
@@ -431,10 +440,10 @@
             <button class="action-button" onclick="recognizeAndCompare10()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('औ')">🔊</button>
             <button onclick="canvas10.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas10.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas10.redo()"><i class="fas fa-redo"></i></button>
          
            
             
@@ -469,10 +478,10 @@
             <button class="action-button" onclick="recognizeAndCompare11()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('अं ')">🔊</button>
             <button onclick="canvas11.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas11.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas11.redo()"><i class="fas fa-redo"></i></button>
          
            
             
@@ -507,10 +516,10 @@
             <button class="action-button" onclick="recognizeAndCompare12()">🎯✅</button>
             <button class="speak-button" onclick="speakLetter('अः')">🔊</button>
             <button onclick="canvas12.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                    <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-                </svg>
-               </button>
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+             </button>
+               <button  class="action-button"onclick="canvas12.undo()" ><i class="fas fa-undo"></i></button>
+                <button  class="action-button" onclick="canvas12.redo()"><i class="fas fa-redo"></i></button>
          
            
             
@@ -545,10 +554,10 @@
         <button class="action-button" onclick="recognizeAndCompare13()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('क')">🔊</button>
         <button onclick="canvas13.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas13.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas13.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -578,10 +587,10 @@
         <button class="action-button" onclick="recognizeAndCompare14()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('ख')">🔊</button>
         <button onclick="canvas14.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas14.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas14.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -611,10 +620,10 @@
         <button class="action-button" onclick="recognizeAndCompare15()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('ग')">🔊</button>
         <button onclick="canvas15.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas15.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas15.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -644,10 +653,10 @@
         <button class="action-button" onclick="recognizeAndCompare16()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('घ')">🔊</button>
         <button onclick="canvas16.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas16.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas16.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -677,10 +686,10 @@
         <button class="action-button" onclick="recognizeAndCompare17()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('ङ')">🔊</button>
         <button onclick="canvas17.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas17.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas17.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -710,10 +719,10 @@
         <button class="action-button" onclick="recognizeAndCompare18()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('च')">🔊</button>
         <button onclick="canvas18.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas18.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas18.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -743,10 +752,10 @@
         <button class="action-button" onclick="recognizeAndCompare19()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('छ')">🔊</button>
         <button onclick="canvas19.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas19.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas19.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -776,10 +785,10 @@
         <button class="action-button" onclick="recognizeAndCompare20()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('ज')">🔊</button>
         <button onclick="canvas20.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas20.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas20.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -809,10 +818,10 @@
         <button class="action-button" onclick="recognizeAndCompare21()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('झ')">🔊</button>
         <button onclick="canvas21.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas21.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas21.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -842,10 +851,10 @@
         <button class="action-button" onclick="recognizeAndCompare22()">🎯✅</button>
         <button class="speak-button" onclick="speakLetter('ञ')">🔊</button>
         <button onclick="canvas22.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+         </button>
+           <button  class="action-button"onclick="canvas22.undo()" ><i class="fas fa-undo"></i></button>
+            <button  class="action-button" onclick="canvas22.redo()"><i class="fas fa-redo"></i></button>
     </div>
     
     <div id="res_box">
@@ -856,426 +865,6 @@
         <input type="hidden" id="letterToCompare22" value="ञ">
     </div>
 </div>
-<!-- ट -->
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_ta.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "ट" लिखें </h2>
-            <canvas id="canvas23" width="680" height="400"></canvas>
-        </div>
-    </div>
-
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare23()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('ट')">🔊</button>
-        <button onclick="canvas23.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
-    </div>
-    
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans23"></div>
-        <input type="hidden" id="letterToCompare23" value="ट">
-    </div>
-</div>
-<!-- ठ -->
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_tha.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "ठ" लिखें </h2>
-            <canvas id="canvas24" width="680" height="400"></canvas>
-        </div>
-    </div>
-
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare24()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('ठ')">🔊</button>
-        <button onclick="canvas24.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
-    </div>
-    
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans24"></div>
-        <input type="hidden" id="letterToCompare24" value="ठ">
-    </div>
-</div>
-
-<!-- ड -->
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_da.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "ड" लिखें </h2>
-            <canvas id="canvas25" width="680" height="400"></canvas>
-        </div>
-    </div>
-
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare25()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('ड')">🔊</button>
-        <button onclick="canvas25.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
-    </div>
-    
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans25"></div>
-        <input type="hidden" id="letterToCompare25" value="ड">
-    </div>
-</div>
-
-<!-- ढ -->
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_dha.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "ढ" लिखें </h2>
-            <canvas id="canvas26" width="680" height="400"></canvas>
-        </div>
-    </div>
-
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare26()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('ढ')">🔊</button>
-        <button onclick="canvas26.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
-    </div>
-    
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans26"></div>
-        <input type="hidden" id="letterToCompare26" value="ढ">
-    </div>
-</div>
-
-<!-- ण -->
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_na.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "ण" लिखें </h2>
-            <canvas id="canvas27" width="680" height="400"></canvas>
-        </div>
-    </div>
-
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare27()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('ण')">🔊</button>
-        <button onclick="canvas27.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-           </button>
-    </div>
-    
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans27"></div>
-        <input type="hidden" id="letterToCompare27" value="ण">
-    </div>
-</div>
-
-<div class="writing-practice">
-
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_ta.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "त" लिखें </h2>
-            <canvas id="canvas28" width="680" height="400"></canvas>
-        </div>
-    </div>
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare28()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('त')">🔊</button>
-        <button onclick="canvas28.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans28"></div>
-        <input type="hidden" id="letterToCompare28" value="त">
-    </div>
-</div>
-
-
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_tha.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "थ" लिखें </h2>
-            <canvas id="canvas29" width="680" height="400"></canvas>
-        </div>
-    </div>
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare29()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('थ')">🔊</button>
-        <button onclick="canvas29.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans29"></div>
-        <input type="hidden" id="letterToCompare29" value="थ">
-    </div>
-</div>
-
-
-<div class="writing-practice">
-
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_ta.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "द" लिखें </h2>
-            <canvas id="canvas30" width="680" height="400"></canvas>
-        </div>
-    </div>
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare30()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('द')">🔊</button>
-        <button onclick="canvas30.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans30"></div>
-        <input type="hidden" id="letterToCompare30" value="द">
-    </div>
-</div>
-
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_tha.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "ध" लिखें </h2>
-            <canvas id="canvas31" width="680" height="400"></canvas>
-        </div>
-    </div>
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare31()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('ध')">🔊</button>
-        <button onclick="canvas31.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans31"></div>
-        <input type="hidden" id="letterToCompare31" value="ध">
-    </div>
-</div>
-
-
-
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_tha.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "न" लिखें </h2>
-            <canvas id="canvas32" width="680" height="400"></canvas>
-        </div>
-    </div>
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare32()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('न')">🔊</button>
-        <button onclick="canvas32.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans32"></div>
-        <input type="hidden" id="letterToCompare32" value="न">
-
-    </div>
-</div>
-
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_pa.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "प" लिखें </h2>
-            <canvas id="canvas33" width="680" height="400"></canvas>
-        </div>
-    </div>
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare33()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('प')">🔊</button>
-        <button onclick="canvas33.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans33"></div>
-        <input type="hidden" id="letterToCompare33" value="प">
-    </div>
-</div>
-
-
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_pha.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "फ" लिखें </h2>
-            <canvas id="canvas34" width="680" height="400"></canvas>
-        </div>
-    </div>
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare34()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('फ')">🔊</button>
-        <button onclick="canvas34.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans34"></div>
-        <input type="hidden" id="letterToCompare34" value="फ">
-    </div>
-</div>
-
-<div class="writing-practice">
-    <div class="main-container">
-        <div class="sub-container">
-            <video width="360" height="400" controls muted>
-                <source src="trace_pa.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="sub-container1">
-            <h2> "ब" लिखें </h2>
-            <canvas id="canvas35" width="680" height="400"></canvas>
-        </div>
-    </div>
-    <div class="button-container">
-        <button class="action-button" onclick="recognizeAndCompare35()">🎯✅</button>
-        <button class="speak-button" onclick="speakLetter('ब')">🔊</button>
-        <button onclick="canvas33.erase()" style="background-color: #f0f0f0; border: none; padding: 10px; border-radius: 50%; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                <path d="M463.5 224l8.5 0c13.3 0 24-10.7 24-24l0-128c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8l119.5 0z"/>
-            </svg>
-        </button>
-    </div>
-    <div id="res_box">
-        <div width="400">
-            <h1>परिणाम:</h1>
-        </div>
-        <div class="ans" id="ans35"></div>
-        <input type="hidden" id="letterToCompare35" value="ब">
-    </div>
-</div>
-
-
-
-
-   
-
-
-
-   
     <script src="script.js"></script>
     <script type="text/javascript" src="handwriting.canvas.js"></script>
     <script type="text/javascript" src="JS.js"></script>

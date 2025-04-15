@@ -36,6 +36,7 @@ canvas.setCallBack(function(data, err) {
 });
 
 canvas.setLineWidth(5);
+canvas.set_Undo_Redo(true, true);
 
 //Set options
 canvas.setOptions({
@@ -130,6 +131,7 @@ canvas1.setCallBack(function(data, err) {
 });
 
 canvas1.setLineWidth(5);
+canvas1.set_Undo_Redo(true, true);
 
 //Set options
 canvas1.setOptions({
@@ -203,6 +205,7 @@ canvas3.setCallBack(function(data, err) {
 });
 
 canvas3.setLineWidth(5);
+canvas3.set_Undo_Redo(true, true);
 
 //Set options
 canvas3.setOptions({
@@ -239,6 +242,7 @@ canvas4.setCallBack(function(data, err) {
 });
 
 canvas4.setLineWidth(5);
+canvas4.set_Undo_Redo(true, true);
 
 //Set options
 canvas4.setOptions({
@@ -275,6 +279,7 @@ canvas5.setCallBack(function(data, err) {
 });
 
 canvas5.setLineWidth(5);
+canvas5.set_Undo_Redo(true, true);
 
 //Set options
 canvas5.setOptions({
@@ -311,6 +316,7 @@ canvas6.setCallBack(function(data, err) {
 });
 
 canvas6.setLineWidth(5);
+canvas6.set_Undo_Redo(true, true);
 
 //Set options
 canvas6.setOptions({
@@ -347,6 +353,7 @@ canvas7.setCallBack(function(data, err) {
 });
 
 canvas7.setLineWidth(5);
+canvas7.set_Undo_Redo(true, true);
 
 //Set options
 canvas7.setOptions({
@@ -379,6 +386,7 @@ canvas8.setCallBack(function(data, err) {
 });
 
 canvas8.setLineWidth(5);
+canvas8.set_Undo_Redo(true, true);
 
 //Set options
 canvas8.setOptions({
@@ -415,6 +423,8 @@ canvas9.setCallBack(function(data, err) {
 });
 
 canvas9.setLineWidth(5);
+canvas9.set_Undo_Redo(true, true);
+
 
 //Set options
 canvas9.setOptions({
@@ -450,6 +460,7 @@ canvas10.setCallBack(function(data, err) {
 });
 
 canvas10.setLineWidth(5);
+canvas10.set_Undo_Redo(true, true);
 
 //Set options
 canvas10.setOptions({
@@ -486,6 +497,7 @@ canvas11.setCallBack(function(data, err) {
 });
 
 canvas11.setLineWidth(5);
+canvas11.set_Undo_Redo(true, true);
 
 //Set options
 canvas11.setOptions({
@@ -522,6 +534,7 @@ canvas12.setCallBack(function(data, err) {
 });
 
 canvas12.setLineWidth(5);
+canvas12.set_Undo_Redo(true, true);
 
 //Set options
 canvas12.setOptions({
@@ -558,6 +571,7 @@ canvas13.setCallBack(function(data, err) {
 });
 
 canvas13.setLineWidth(5);
+canvas13.set_Undo_Redo(true, true);
 
 //Set options
 canvas13.setOptions({
@@ -594,6 +608,7 @@ canvas14.setCallBack(function(data, err) {
 });
 
 canvas14.setLineWidth(5);
+canvas14.set_Undo_Redo(true, true);
 
 //Set options
 canvas14.setOptions({
@@ -630,6 +645,7 @@ canvas15.setCallBack(function(data, err) {
 });
 
 canvas15.setLineWidth(5);
+canvas15.set_Undo_Redo(true, true);
 
 //Set options
 canvas15.setOptions({
@@ -666,6 +682,7 @@ canvas16.setCallBack(function(data, err) {
 });
 
 canvas16.setLineWidth(5);
+canvas16.set_Undo_Redo(true, true);
 
 //Set options
 canvas16.setOptions({
@@ -702,6 +719,7 @@ canvas17.setCallBack(function(data, err) {
 });
 
 canvas17.setLineWidth(5);
+canvas17.set_Undo_Redo(true, true);
 
 //Set options
 canvas17.setOptions({
@@ -738,6 +756,7 @@ canvas18.setCallBack(function(data, err) {
 });
 
 canvas18.setLineWidth(5);
+canvas18.set_Undo_Redo(true, true);
 
 //Set options
 canvas18.setOptions({
@@ -774,6 +793,7 @@ canvas19.setCallBack(function(data, err) {
 });
 
 canvas19.setLineWidth(5);
+canvas19.set_Undo_Redo(true, true);
 
 //Set options
 canvas19.setOptions({
@@ -810,6 +830,7 @@ canvas20.setCallBack(function(data, err) {
 });
 
 canvas20.setLineWidth(5);
+canvas20.set_Undo_Redo(true, true);
 
 //Set options
 canvas20.setOptions({
@@ -846,6 +867,7 @@ canvas21.setCallBack(function(data, err) {
 });
 
 canvas21.setLineWidth(5);
+canvas21.set_Undo_Redo(true, true);
 
 //Set options
 canvas21.setOptions({
@@ -882,6 +904,7 @@ canvas22.setCallBack(function(data, err) {
 });
 
 canvas22.setLineWidth(5);
+canvas22.set_Undo_Redo(true, true);
 
 //Set options
 canvas22.setOptions({
@@ -901,184 +924,185 @@ function recognizeAndCompare22() {
         console.error(err);
     });
 }
-var canvas23 = new handwriting.Canvas(document.getElementById("canvas23"), 3);
+// var canvas23 = new handwriting.Canvas(document.getElementById("canvas23"), 3);
 
-canvas23.setCallBack(function(data, err) {
-    if (data == document.getElementById("letterToCompare23").value) {
-        document.getElementById("ans23").innerText = "✅ सही उत्तर!";
-        startConfetti();
-        var clapSound = document.getElementById("clapSound");
-        clapSound.play();
-    } else{
-        document.getElementById("ans23").innerText = "❌ गलत उत्तर!";
-        var sadsound = document.getElementById("lose");
-        sadsound.play();}
-    if (err) throw err;
-    else document.getElementById("result23").innerHTML = data;
-});
+// canvas23.setCallBack(function(data, err) {
+//     if (data == document.getElementById("letterToCompare23").value) {
+//         document.getElementById("ans23").innerText = "✅ सही उत्तर!";
+//         startConfetti();
+//         var clapSound = document.getElementById("clapSound");
+//         clapSound.play();
+//     } else{
+//         document.getElementById("ans23").innerText = "❌ गलत उत्तर!";
+//         var sadsound = document.getElementById("lose");
+//         sadsound.play();}
+//     if (err) throw err;
+//     else document.getElementById("result23").innerHTML = data;
+// });
 
-canvas23.setLineWidth(5);
+// canvas23.setLineWidth(5);
 
-//Set options
-canvas23.setOptions({
-    language: "hi",
-    numOfReturn: 1
-});
+// //Set options
+// canvas23.setOptions({
+//     language: "hi",
+//     numOfReturn: 1
+// });
 
-function recognizeAndCompare23() {
-    canvas23.recognize().then(function(data) {
-        var resultDisplay = document.getElementById("result");
-        if (data.trim() === document.getElementById("letterToCompare").value) {
-            resultDisplay.innerHTML = "Yes";
-        } else {
-            resultDisplay.innerHTML = "No";
-        }
-    }).catch(function(err) {
-        console.error(err);
-    });
-}
-var canvas24 = new handwriting.Canvas(document.getElementById("canvas24"), 3);
+// function recognizeAndCompare23() {
+//     canvas23.recognize().then(function(data) {
+//         var resultDisplay = document.getElementById("result");
+//         if (data.trim() === document.getElementById("letterToCompare").value) {
+//             resultDisplay.innerHTML = "Yes";
+//         } else {
+//             resultDisplay.innerHTML = "No";
+//         }
+//     }).catch(function(err) {
+//         console.error(err);
+//     });
+// }
+// var canvas24 = new handwriting.Canvas(document.getElementById("canvas24"), 3);
 
-canvas24.setCallBack(function(data, err) {
-    if (data == document.getElementById("letterToCompare24").value) {
-        document.getElementById("ans24").innerText = "✅ सही उत्तर!";
-        startConfetti();
-        var clapSound = document.getElementById("clapSound");
-        clapSound.play();
-    } else{
-        document.getElementById("ans24").innerText = "❌ गलत उत्तर!";
-        var sadsound = document.getElementById("lose");
-        sadsound.play();}
-    if (err) throw err;
-    else document.getElementById("result24").innerHTML = data;
-});
+// canvas24.setCallBack(function(data, err) {
+//     if (data == document.getElementById("letterToCompare24").value) {
+//         document.getElementById("ans24").innerText = "✅ सही उत्तर!";
+//         startConfetti();
+//         var clapSound = document.getElementById("clapSound");
+//         clapSound.play();
+//     } else{
+//         document.getElementById("ans24").innerText = "❌ गलत उत्तर!";
+//         var sadsound = document.getElementById("lose");
+//         sadsound.play();}
+//     if (err) throw err;
+//     else document.getElementById("result24").innerHTML = data;
+// });
 
-canvas24.setLineWidth(5);
+// canvas24.setLineWidth(5);
 
-//Set options
-canvas24.setOptions({
-    language: "hi",
-    numOfReturn: 1
-});
+// //Set options
+// canvas24.setOptions({
+//     language: "hi",
+//     numOfReturn: 1
+// });
 
-function recognizeAndCompare24() {
-    canvas24.recognize().then(function(data) {
-        var resultDisplay = document.getElementById("result");
-        if (data.trim() === document.getElementById("letterToCompare").value) {
-            resultDisplay.innerHTML = "Yes";
-        } else {
-            resultDisplay.innerHTML = "No";
-        }
-    }).catch(function(err) {
-        console.error(err);
-    });
-}
-var canvas25 = new handwriting.Canvas(document.getElementById("canvas25"), 3);
+// function recognizeAndCompare24() {
+//     canvas24.recognize().then(function(data) {
+//         var resultDisplay = document.getElementById("result");
+//         if (data.trim() === document.getElementById("letterToCompare").value) {
+//             resultDisplay.innerHTML = "Yes";
+//         } else {
+//             resultDisplay.innerHTML = "No";
+//         }
+//     }).catch(function(err) {
+//         console.error(err);
+//     });
+// }
+// var canvas25 = new handwriting.Canvas(document.getElementById("canvas25"), 3);
 
-canvas25.setCallBack(function(data, err) {
-    if (data == document.getElementById("letterToCompare25").value) {
-        document.getElementById("ans25").innerText = "✅ सही उत्तर!";
-        startConfetti();
-        var clapSound = document.getElementById("clapSound");
-        clapSound.play();
-    } else{
-        document.getElementById("ans25").innerText = "❌ गलत उत्तर!";
-        var sadsound = document.getElementById("lose");
-        sadsound.play();}
-    if (err) throw err;
-    else document.getElementById("result25").innerHTML = data;
-});
+// canvas25.setCallBack(function(data, err) {
+//     if (data == document.getElementById("letterToCompare25").value) {
+//         document.getElementById("ans25").innerText = "✅ सही उत्तर!";
+//         startConfetti();
+//         var clapSound = document.getElementById("clapSound");
+//         clapSound.play();
+//     } else{
+//         document.getElementById("ans25").innerText = "❌ गलत उत्तर!";
+//         var sadsound = document.getElementById("lose");
+//         sadsound.play();}
+//     if (err) throw err;
+//     else document.getElementById("result25").innerHTML = data;
+// });
 
-canvas25.setLineWidth(5);
+// canvas25.setLineWidth(5);
 
-//Set options
-canvas25.setOptions({
-    language: "hi",
-    numOfReturn: 1
-});
+// //Set options
+// canvas25.setOptions({
+//     language: "hi",
+//     numOfReturn: 1
+// });
 
-function recognizeAndCompare25() {
-    canvas25.recognize().then(function(data) {
-        var resultDisplay = document.getElementById("result");
-        if (data.trim() === document.getElementById("letterToCompare").value) {
-            resultDisplay.innerHTML = "Yes";
-        } else {
-            resultDisplay.innerHTML = "No";
-        }
-    }).catch(function(err) {
-        console.error(err);
-    });
-}
-var canvas26 = new handwriting.Canvas(document.getElementById("canvas26"), 3);
+// function recognizeAndCompare25() {
+//     canvas25.recognize().then(function(data) {
+//         var resultDisplay = document.getElementById("result");
+//         if (data.trim() === document.getElementById("letterToCompare").value) {
+//             resultDisplay.innerHTML = "Yes";
+//         } else {
+//             resultDisplay.innerHTML = "No";
+//         }
+//     }).catch(function(err) {
+//         console.error(err);
+//     });
+// }
+// var canvas26 = new handwriting.Canvas(document.getElementById("canvas26"), 3);
 
-canvas26.setCallBack(function(data, err) {
-    if (data == document.getElementById("letterToCompare26").value) {
-        document.getElementById("ans26").innerText = "✅ सही उत्तर!";
-        startConfetti();
-        var clapSound = document.getElementById("clapSound");
-        clapSound.play();
-    } else{
-        document.getElementById("ans26").innerText = "❌ गलत उत्तर!";
-        var sadsound = document.getElementById("lose");
-        sadsound.play();}
-    if (err) throw err;
-    else document.getElementById("result26").innerHTML = data;
-});
+// canvas26.setCallBack(function(data, err) {
+//     if (data == document.getElementById("letterToCompare26").value) {
+//         document.getElementById("ans26").innerText = "✅ सही उत्तर!";
+//         startConfetti();
+//         var clapSound = document.getElementById("clapSound");
+//         clapSound.play();
+//     } else{
+//         document.getElementById("ans26").innerText = "❌ गलत उत्तर!";
+//         var sadsound = document.getElementById("lose");
+//         sadsound.play();}
+//     if (err) throw err;
+//     else document.getElementById("result26").innerHTML = data;
+// });
 
-canvas26.setLineWidth(5);
+// canvas26.setLineWidth(5);
 
-//Set options
-canvas26.setOptions({
-    language: "hi",
-    numOfReturn: 1
-});
+// //Set options
+// canvas26.setOptions({
+//     language: "hi",
+//     numOfReturn: 1
+// });
 
-function recognizeAndCompare26() {
-    canvas26.recognize().then(function(data) {
-        var resultDisplay = document.getElementById("result");
-        if (data.trim() === document.getElementById("letterToCompare").value) {
-            resultDisplay.innerHTML = "Yes";
-        } else {
-            resultDisplay.innerHTML = "No";
-        }
-    }).catch(function(err) {
-        console.error(err);
-    });
-}
-var canvas27 = new handwriting.Canvas(document.getElementById("canvas27"), 3);
+// function recognizeAndCompare26() {
+//     canvas26.recognize().then(function(data) {
+//         var resultDisplay = document.getElementById("result");
+//         if (data.trim() === document.getElementById("letterToCompare").value) {
+//             resultDisplay.innerHTML = "Yes";
+//         } else {
+//             resultDisplay.innerHTML = "No";
+//         }
+//     }).catch(function(err) {
+//         console.error(err);
+//     });
+// }
+// var canvas27 = new handwriting.Canvas(document.getElementById("canvas27"), 3);
 
-canvas27.setCallBack(function(data, err) {
-    if (data == document.getElementById("letterToCompare26").value) {
-        document.getElementById("ans27").innerText = "✅ सही उत्तर!";
-        startConfetti();
-        var clapSound = document.getElementById("clapSound");
-        clapSound.play();
-    } else{
-        document.getElementById("ans27").innerText = "❌ गलत उत्तर!";
-        var sadsound = document.getElementById("lose");
-        sadsound.play();}
-    if (err) throw err;
-    else document.getElementById("result27").innerHTML = data;
-});
+// canvas27.setCallBack(function(data, err) {
+//     if (data == document.getElementById("letterToCompare26").value) {
+//         document.getElementById("ans27").innerText = "✅ सही उत्तर!";
+//         startConfetti();
+//         var clapSound = document.getElementById("clapSound");
+//         clapSound.play();
+//     } else{
+//         document.getElementById("ans27").innerText = "❌ गलत उत्तर!";
+//         var sadsound = document.getElementById("lose");
+//         sadsound.play();}
+//     if (err) throw err;
+//     else document.getElementById("result27").innerHTML = data;
+// });
 
-canvas27.setLineWidth(5);
+// canvas27.setLineWidth(5);
+// canvas27.set_Undo_Redo(true, true);
 
-//Set options
-canvas27.setOptions({
-    language: "hi",
-    numOfReturn: 1
-});
+// //Set options
+// canvas27.setOptions({
+//     language: "hi",
+//     numOfReturn: 1
+// });
 
-function recognizeAndCompare26() {
-    canvas27.recognize().then(function(data) {
-        var resultDisplay = document.getElementById("result");
-        if (data.trim() === document.getElementById("letterToCompare").value) {
-            resultDisplay.innerHTML = "Yes";
-        } else {
-            resultDisplay.innerHTML = "No";
-        }
-    }).catch(function(err) {
-        console.error(err);
-    });
-}
+// function recognizeAndCompare26() {
+//     canvas27.recognize().then(function(data) {
+//         var resultDisplay = document.getElementById("result");
+//         if (data.trim() === document.getElementById("letterToCompare").value) {
+//             resultDisplay.innerHTML = "Yes";
+//         } else {
+//             resultDisplay.innerHTML = "No";
+//         }
+//     }).catch(function(err) {
+//         console.error(err);
+//     });
+// }
 

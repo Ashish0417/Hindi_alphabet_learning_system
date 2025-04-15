@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hindi Tracing Test</title>
+
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/gradient-rainbow-glitter-background_23-2149750527.avif') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+    .container {
+      background: #fff9f0;
+      border-radius: 20px;
+      padding: 20px 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width : 500px;
+    }
+
+    h1 {
+      color: #ff6f61;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .letter-box {
+      font-size: 6em;
+      margin: 20px 0;
+      color: #5a189a;
+    }
+
+    #testCanvas {
+      background: #f0f8ff;
+      border: 3px dashed #aaa;
+      border-radius: 15px;
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 15px;
+      font-size: 3em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #checkBtn {
+      background-color: rgb(210, 245, 168);
+      color: white;
+    }
+
+    #resetBtn {
+      background-color: #a0f7f8;
+      color: white;
+    }
+
+    #nextBtn {
+      background-color: #5b98ce;
+      color: white;
+      display: none;
+      animation: pulse 1s infinite ease-in-out;
+    }
+
+    #exitBtn {
+      background-color: rgb(245, 161, 161);
+      color: white;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      font-size: 1.4em;
+      padding: 15px;
+      border-radius: 15px;
+      display: none;
+    }
+
+    button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+    .correct {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .wrong {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .progress-container {
+      background-color: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+      height: 20px;
+      width: 100%;
+    }
+
+    #progressBar {
+      height: 100%;
+      background-color: #00b894;
+      transition: width 0.4s ease;
+    }
+
+    #finalScore {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #6c5ce7;
+      margin-top: 30px;
+    
+   animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.2);
+}
+100% {
+    transform: scale(1);
+}
+}
+
+#res_box{
+     display:flex;
+  
+     margin-left: 700px;
+     padding-left:50px;
+}
+
+
+    #emojiProgress {
+      font-size: 2em;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🧠 हिंदी परीक्षा ✍️</h1>
+
+    <div class="letter-box">
+      <span id="currentLetter"></span>
+      <input type="hidden" id="letterToCompare" />
+    </div>
+
+    <canvas id="testCanvas" width="300" height="300"></canvas>
+    
+    <div>
+      <button id="checkBtn">✅</button>
+      <button id="resetBtn">🔄</button>
+      <button id="nextBtn">➡️</button>
+      <button id="exitBtn">❌</button>
+    </div>
+
+    <div id="progressText"></div>
+    <div id="emojiProgress">😊</div>
+
+
+    <div class="progress-container">
+      <div id="progressBar" style="width:0%;"></div>
+    </div>
+
+    <div id="finalScore"></div>
+  </div>
+
+  <audio id="clapSound" src="claps.mp3"></audio>
+  <audio id="lose" src="lose.mp3"></audio>
+ 
+</body>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script type="text/javascript" src="handwriting.canvas.js"></script>
+<script src="test.js"></script>
+<script>
+  document.getElementById("exitBtn").addEventListener("click", function () {
+    const exitConfirmation = confirm("Exit the test?");
+    if (exitConfirmation) {
+      window.location.href = "course.html"; 
+    }
+  });
+</script>
+</html>
