@@ -60,7 +60,7 @@ An interactive, child-friendly web application designed to help young learners m
 
 ## 📸 Screenshots
 
-> *(Add screenshots or GIFs of tracing test and puzzle interactions here)*
+
 
 ---
 
